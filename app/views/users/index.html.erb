@@ -1,0 +1,25 @@
+<div>
+     <div>
+          <span>  <input type="button" value="New User" style="width: 100px;" onclick="window.location.href='<%=  new_user_path %>'" /></span>
+          <div>
+            <h2 >Users</h2>
+            <table>
+              <tr>
+                <td width="221">Name</td>
+                <td width="250">Email</td>
+                <td width="83">Edit</td>
+                <td width="93">Delete</td>
+              </tr>
+               <% @users.each do |u| %>
+                     <tr>
+                         <td width="221"><%= link_to("#{u.name}", user_path(u.id))%></td>
+                         <td width="221"><%= link_to("#{u.email}", user_path(u.id)) %></td>
+                         <td width="83" align="center" valign="middle"><%= link_to(image_tag("edit-icon.png") , edit_user_path(u.id))%></td>
+                         <td width="93" align="center" valign="middle"><%= link_to(image_tag("delet-btn.png"), u, :confirm => "Are you sure you want to delete user?", :method => :delete)%></td>
+                       </tr>
+                      <% end %>
+            </table>
+         </div>
+    </div>
+      
+ </div>

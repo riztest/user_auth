@@ -1,0 +1,93 @@
+<div>
+    <h2>User</h2>
+    <div>
+      <div>
+             <%= form_for(@user, :html => { :method => :put,:multipart => true }) do |f| %>
+	<%= simple_format errors_for(@user,"Could not update user").html_safe %>
+	<%= render :partial => 'user_fields', :locals => { :f => f } %>
+          </div>
+      <div>
+    
+  </div>    
+     
+      
+      
+       <div>
+         
+         
+         
+         
+         <div>
+              <h3>Password</h3>
+          <%= f.password_field :password%>
+              <br>
+              <span class="italic-text">(leave blank if you don't want to change it)</span>
+            </div>
+            
+            <br>
+            <div class="text-aera priority">
+              <h3>Password Confirmation <span>*</span></h3>
+             <%= f.password_field :password_confirmation%>
+              </div>
+              
+            
+            <br>
+            <div class="text-aera priority">
+              <h3>Current Password </h3>
+            <%= f.password_field :current_password%>
+              <br>
+              <span class="italic-text">(we need your current password to confirm your changes)</span> </div>
+         </div>
+       
+                   <div class="text-aera priority">
+                  <%= f.submit "Update",:style=>"width:70px;"%>
+                  <input type="button" value="Back" class="btnGray" style="width: 60px;" onclick="window.location.href='<%=  users_path %>'" />
+      </div>
+   
+  </div>
+
+  
+</div>
+  
+  
+ 
+  
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

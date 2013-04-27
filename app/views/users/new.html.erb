@@ -1,0 +1,31 @@
+<div>
+    <h2>User</h2>
+    <div>
+      <div>
+        <%= form_for(@user,:html => { :multipart => true }) do |f| %>
+        <%= simple_format (errors_for(@user,"Could not create user").html_safe) %>
+        <%= render :partial => 'user_fields', :locals => { :f => f } %>
+      </div>
+      
+      
+      
+       <div>
+            <div>
+                <h3>Password <span>*</span></h3>
+                <%= f.password_field :password%>
+            </div>
+             <div>
+                <h3>Password Confirmation <span>*</span></h3>
+                <%= f.password_field :password_confirmation%>
+            </div>
+            <br>
+            <div>
+              <%= f.submit "Save",:style=>"width:70px;"%>
+              <input type="button" value="Back" style="width: 60px;" onclick="window.location.href='<%=  users_path %>'" />
+            </div>
+       </div>
+       
+    </div>
+</div>
+  <p><%= f.hidden_field :creator_id, :value=>"#{current_user.id }" %></p>
+   <% end %>
