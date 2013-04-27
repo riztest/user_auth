@@ -66,8 +66,8 @@ module UserAuth
        :port => 587,
        :authentication => :plain,
        :enable_starttls_auto => true,
-      :user_name => "username@gmail.com",
-      :password => "password"
+      :user_name => "stafftest9@gmail.com",
+      :password => "rabnawaz1"
     }
   end
 end
